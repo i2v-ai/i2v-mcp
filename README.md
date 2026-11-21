@@ -32,7 +32,13 @@ OAuth discovery: <https://i2v.ai/.well-known/oauth-protected-resource/api/mcp>
 
 Read is granted first; write needs an explicit second consent and can be revoked from the account settings.
 
-Client guides for ChatGPT, Codex, [CC], Cursor, GitHub Copilot, VS Code and Gemini CLI live at <https://i2v.ai/docs/mcp>.
+Client guides for ChatGPT, Codex, [CC], Cursor, GitHub Copilot, VS Code, Kiro and Gemini CLI live at <https://i2v.ai/docs/mcp>.
+
+## Install in Kiro
+
+[![Add i2v.ai to Kiro](https://img.shields.io/badge/Add%20to-Kiro-6b4bd6?style=flat-square)](https://kiro.dev/launch/mcp/add?name=i2v.ai&config=%7B%22url%22%3A%22https%3A//i2v.ai/api/mcp%22%2C%22disabled%22%3Afalse%2C%22autoApprove%22%3A%5B%5D%7D)
+
+The badge opens Kiro with the remote endpoint pre-filled; Kiro then walks through the OAuth consent for `mcp:read`.
 
 ## Server metadata
 
@@ -59,6 +65,13 @@ Client guides for ChatGPT, Codex, [CC], Cursor, GitHub Copilot, VS Code and Gemi
 | [generate-action](https://github.com/i2v-ai/generate-action) | GitHub Action |
 | [i2v-api-examples](https://github.com/i2v-ai/i2v-api-examples) | Runnable examples |
 | [i2v-agent-tools](https://github.com/i2v-ai/i2v-agent-tools) | Ecosystem hub |
+
+## Privacy and support
+
+- Privacy policy: <https://i2v.ai/privacy-policy>
+- Terms of service: <https://i2v.ai/terms-of-service>
+- Support: <support@i2v.ai>
+- Security reports: <security@i2v.ai>
 
 ## License
 
