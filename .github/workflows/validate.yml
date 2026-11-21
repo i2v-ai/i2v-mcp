@@ -1,0 +1,24 @@
+name: Validate server metadata
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          node -e "
+          const s = require('./server.json');
+          const required = ['\$schema', 'name', 'title', 'description', 'repository', 'version', 'websiteUrl', 'remotes'];
+          for (const key of required) if (!s[key]) throw new Error('server.json is missing ' + key);
+          if (s.name !== 'io.github.i2v-ai/mcp') throw new Error('unexpected registry name');
+          if (s.repository.url !== 'https://github.com/i2v-ai/i2v-mcp') throw new Error('repository URL must point here');
+          if (s.remotes[0].url !== 'https://i2v.ai/api/mcp') throw new Error('unexpected remote endpoint');
+          console.log('server.json is valid');
+          "

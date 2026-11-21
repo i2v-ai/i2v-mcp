@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.i2v-ai/mcp",
+  "title": "i2v.ai",
+  "description": "Discover, quote, generate, and manage image and video tasks with i2v.ai.",
+  "repository": {
+    "url": "https://github.com/i2v-ai/i2v-mcp",
+    "source": "github"
+  },
+  "version": "1.1.0",
+  "websiteUrl": "https://i2v.ai/mcp",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://i2v.ai/api/mcp"
+    }
+  ]
+}

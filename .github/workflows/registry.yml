@@ -1,0 +1,33 @@
+name: Validate and publish MCP Registry metadata
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the validated server metadata to the Official MCP Registry
+        required: true
+        default: false
+        type: boolean
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the Official MCP Registry publisher
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=v1.8.9
+          archive="$(gh release view "$version" --repo modelcontextprotocol/registry --json assets --jq '.assets[].name | select(test("mcp-publisher.*linux.*amd64.*\\.tar\\.gz$"))')"
+          test -n "$archive"
+          gh release download "$version" --repo modelcontextprotocol/registry --pattern "$archive"
+          tar -xzf "$archive" mcp-publisher
+      - run: ./mcp-publisher validate server.json
+      - name: Publish metadata
+        if: inputs.publish
+        run: |
+          test "$GITHUB_REF" = refs/heads/main
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
