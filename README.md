@@ -14,6 +14,7 @@
 <p align="center">
   <a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.i2v-ai%2Fmcp/versions/latest"><img alt="Official MCP Registry" src="https://img.shields.io/badge/registry-io.github.i2v--ai%2Fmcp-6366f1?style=flat-square"></a>
   <a href="https://i2v.ai/mcp"><img alt="Docs" src="https://img.shields.io/badge/docs-i2v.ai%2Fmcp-0ea5e9?style=flat-square"></a>
+  <a href="https://lobehub.com/mcp/i2v-ai-i2v-mcp"><img alt="LobeHub MCP Market" src="https://lobehub.com/badge/mcp/i2v-ai-i2v-mcp"></a>
   <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-22c55e?style=flat-square"></a>
 </p>
 
