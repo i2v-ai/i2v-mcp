@@ -1,6 +1,6 @@
 {
   "name": "i2v-ai",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Official i2v.ai MCP server: generate images and videos across 12 image and 16 video models, with a USD quote before every paid task and a caller-set spending ceiling.",
   "settings": [
     {
@@ -13,7 +13,8 @@
   "mcpServers": {
     "i2v": {
       "description": "Hosted i2v.ai MCP server over Streamable HTTP. Uses the I2V_API_KEY setting as a bearer token; OAuth 2.1 clients can sign in instead.",
-      "httpUrl": "https://i2v.ai/api/mcp",
+      "type": "http",
+      "url": "https://i2v.ai/api/mcp",
       "headers": {
         "Authorization": "Bearer ${I2V_API_KEY}"
       }
