@@ -1,7 +1,7 @@
 {
   "identifier": "i2v-ai-i2v-mcp",
   "name": "i2v.ai",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "Generate images and videos across 12 image and 16 video models from one hosted MCP server, with a USD quote before every paid task and a caller-set spending ceiling.",
   "author": "i2v.ai",
   "authorUrl": "https://github.com/i2v-ai",
@@ -405,6 +405,135 @@
           "query"
         ]
       }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "generate_image",
+      "title": "Generate an image",
+      "description": "Pick an image model, quote the price, then submit one image task and return the output URL.",
+      "arguments": [
+        {
+          "name": "subject",
+          "required": true
+        },
+        {
+          "name": "style",
+          "required": false
+        },
+        {
+          "name": "aspectRatio",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "generate_video",
+      "title": "Generate a video",
+      "description": "Choose a video model, quote the price, then submit a text-to-video or image-to-video task.",
+      "arguments": [
+        {
+          "name": "subject",
+          "required": true
+        },
+        {
+          "name": "duration",
+          "required": false
+        },
+        {
+          "name": "aspectRatio",
+          "required": false
+        },
+        {
+          "name": "referenceImageUrl",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "budget_check",
+      "title": "Check budget before generating",
+      "description": "Read the balance and recent usage, then recommend what fits the remaining budget.",
+      "arguments": [
+        {
+          "name": "goal",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Codex CLI setup",
+      "uriTemplate": "i2v://guides/codex-cli",
+      "description": "Connect the i2v.ai MCP server to the OpenAI Codex CLI.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Claude Code setup",
+      "uriTemplate": "i2v://guides/claude-code",
+      "description": "Add the i2v.ai MCP server to Claude Code with one command.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Gemini CLI setup",
+      "uriTemplate": "i2v://guides/gemini-cli",
+      "description": "Add the i2v.ai MCP server or install the Gemini CLI extension.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Cursor setup",
+      "uriTemplate": "i2v://guides/cursor",
+      "description": "Configure the i2v.ai MCP server in Cursor through mcp.json.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "VS Code Copilot setup",
+      "uriTemplate": "i2v://guides/vscode-copilot",
+      "description": "Register the i2v.ai MCP server for GitHub Copilot agent mode.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "ChatGPT connector setup",
+      "uriTemplate": "i2v://guides/chatgpt",
+      "description": "Connect i2v.ai as a custom connector in ChatGPT.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Claude Desktop setup",
+      "uriTemplate": "i2v://guides/claude-desktop",
+      "description": "Run the i2v.ai MCP server locally inside Claude Desktop.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Direct API key access",
+      "uriTemplate": "i2v://guides/api-key",
+      "description": "Call the MCP endpoint from code or curl with a bearer token.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Local stdio server",
+      "uriTemplate": "i2v://guides/local-stdio",
+      "description": "Run the i2v.ai MCP server as a local stdio process.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "OAuth and scopes",
+      "uriTemplate": "i2v://guides/oauth",
+      "description": "How the i2v.ai MCP server authenticates clients with OAuth 2.1.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Generation workflow",
+      "uriTemplate": "i2v://guides/workflow",
+      "description": "The five tool calls that turn a prompt into a finished image or video.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "Account and usage",
+      "uriTemplate": "i2v://guides/account-and-access",
+      "description": "Read balance, scopes and settled charges for the connected account.",
+      "mimeType": "text/markdown"
     }
   ]
 }
